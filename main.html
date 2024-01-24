@@ -1,16 +1,41 @@
 <!DOCTYPE html>
-
-<html>
-
+<html lang="en">
 <head>
-	<link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yellow Star</title>
+  <style>
+    .star {
+      position: relative;
+      display: inline-block;
+      width: 0;
+      height: 0;
+      border-left: 30px solid transparent;
+      border-right: 30px solid transparent;
+      border-bottom: 50px solid yellow;
+    }
+
+    .star::before,
+    .star::after {
+      content: '';
+      position: absolute;
+      top: 12px;
+      left: -30px;
+      width: 0;
+      height: 0;
+      border-left: 30px solid transparent;
+      border-right: 30px solid transparent;
+      border-top: 50px solid yellow;
+      transform: rotate(180deg);
+    }
+
+    .star::after {
+      top: 62px;
+      transform: rotate(0deg);
+    }
+  </style>
 </head>
-
 <body>
-	<!-- the entire body must be written by student -->
-    <script type="text/javascript" src="./script.js">
-</script>
-
+  <div class="star"></div>
 </body>
-
 </html>
